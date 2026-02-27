@@ -9,20 +9,25 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input:");
         String name = sc.nextLine();
+        char[] chars = name.toCharArray();
 
-        String reversed = new StringBuilder(name).reverse().toString();
+        int start = 0;
+        int end = chars.length - 1;
 
-        for (int i = 0; i < name.length(); i++) {
-            if (name.charAt(i) != reversed.charAt(i)) {
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
                 isPalindrome = false;
                 break;
             }
+            start++;
+            end--;
         }
 
         if (isPalindrome) {
             System.out.println(name + " is a palindrome.");
         } else {
-            System.out.println(name + " is not a palindrome.");
+            System.out.println(name+ " is not a palindrome.");
         }
 
 
